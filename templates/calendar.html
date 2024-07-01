@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Calendar | Huraga Bootstrap Admin Template</title>
+		<meta name="description" content="">
+		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- jQuery FullCalendar Styles -->
+		<link rel='stylesheet' type='text/css' href='css/plugins/jquery.fullcalendar.css'>
+		
+		<!-- CSS styles -->
+		<link rel='stylesheet' type='text/css' href='css/huraga-dark.css'>
+		
+		<!-- Fav and touch icons -->
+		<link rel="shortcut icon" href="img/icons/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="img/icons/apple-touch-icon-57-precomposed.png">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/libs/jquery.js"><\/script>')</script>
+		<script src="js/libs/modernizr.js"></script>
+		<script src="js/libs/selectivizr.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				// Tooltips
+				$('[title]').tooltip({
+					placement: 'top'
+				});
+				
+				// Tabs
+				$('.demoTabs a').click(function (e) {
+					e.preventDefault();
+					$(this).tab('show');
+					$('.fullcalendar, .full-calendar-gcal').fullCalendar('render'); // Refresh jQuery FullCalendar for hidden tabs
+				})
+				
+			});
+		</script>
+	</head>
+	<body>
+		
+		<!-- Main page header -->
+		<header class="container">
+		
+			<!-- Main page logo -->
+			<h1><a href="login.html" class="brand">Huraga</a></h1>
+			
+			<!-- Main page headline -->
+			<p>A beautifully minimalistic admin template</p>
+			
+			<!-- Alternative navigation -->
+			<nav>
+				<ul>
+					<li>
+						<form class="nav-search">
+							<input type="text" placeholder="Search&hellip;">
+						</form>
+					</li>
+					<li>
+						<div class="btn-group">
+							<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+								Configuration
+								<span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu">
+								<li><a href="401.html"><span class="awe-flag"></span> Error page 401</a></li>
+								<li><a href="403.html"><span class="awe-flag"></span> Error page 403</a></li>
+								<li><a href="404.html"><span class="awe-flag"></span> Error page 404</a></li>
+								<li><a href="500.html"><span class="awe-flag"></span> Error page 500</a></li>
+								<li><a href="503.html"><span class="awe-flag"></span> Error page 503</a></li>
+							</ul>
+						</div>
+					</li>
+					<li><a href="#">Logout</a></li>
+				</ul>
+			</nav>
+			<!-- /Alternative navigation -->
+			
+		</header>
+		<!-- /Main page header -->
+		
+		<!-- Main page container -->
+		<section class="container" role="main">
+		
+			<!-- Left (navigation) side -->
+			<div class="navigation-block">
+			
+				<!-- User profile -->
+				<section class="user-profile">
+					<figure>
+						<img alt="John Pixel avatar" src="http://placekitten.com/60/60">
+						<figcaption>
+							<strong><a href="#" class="">John Pixel</a></strong>
+							<em>marketing manager</em>
+							<ul>
+								<li><a class="btn btn-primary btn-flat" href="#" title="Account settings">settings</a></li>
+								<li><a class="btn btn-primary btn-flat" href="#" title="Message inbox">inbox</a></li>
+							</ul>
+						</figcaption>
+					</figure>
+				</section>
+				<!-- /User profile -->
+				
+				<!-- Main navigation -->
+				<nav class="main-navigation" role="navigation">
+					<ul>
+						<li><a href="index.html" class="no-submenu"><span class="awe-home"></span>Dashboard</a></li>
+						<li><a href="forms.html" class="no-submenu"><span class="awe-tasks"></span>Forms</a></li>
+						<li><a href="charts.html" class="no-submenu"><span class="awe-signal"></span>Charts</a></li>
+						<li><a href="tables.html" class="no-submenu"><span class="awe-table"></span>Tables</a></li>
+						<li>
+							<a href="#"><span class="awe-picture"></span>Gallery</a>
+							<ul>
+								<li><a href="gallery.html">Car Gallery</a></li>
+								<li><a href="gallery.html">Food Gallery</a></li>
+								<li><a href="gallery.html">Art Gallery</a></li>
+								<li><a href="gallery.html">Animal Gallery</a></li>
+								<li><a href="gallery.html">Super long name to see how it collapse</a></li>
+							</ul>
+						</li>
+						<li><a href="file-explorer.html" class="no-submenu"><span class="awe-file"></span>File explorer</a></li>
+						<li class="current"><a href="calendar.html" class="no-submenu"><span class="awe-calendar"></span>Calendar <span class="badge">666</span></a></li>
+						<li><a href="ui-buttons.html" class="no-submenu"><span class="awe-magic"></span>UI & Buttons</a></li>
+						<li><a href="typo.html" class="no-submenu"><span class="awe-font"></span>Typography</a></li>
+						<li><a href="viewO.html" class="no-submenu"><span class="awe-th"></span>Grid</a></li>
+						<li>
+							<a href="#"><span class="awe-heart"></span>Goodies</a>
+							<ul>
+								<li><a href="goodies.html">Goodies</a></li>
+								<li><a href="401.html">Error 401</a></li>
+								<li><a href="403.html">Error 403</a></li>
+								<li><a href="404.html">Error 404</a></li>
+								<li><a href="500.html">Error 500</a></li>
+								<li><a href="503.html">Error 503</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<!-- /Main navigation -->
+				
+				<!-- Sample side note -->
+				<section class="side-note">
+					<div class="side-note-container">
+						<h2>Sample Side Note</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis erat dui, quis purus.</p>
+					</div>
+					<div class="side-note-bottom"></div>
+				</section>
+				<!-- /Sample side note -->
+				
+			</div>
+			<!-- Left (navigation) side -->
+			
+			<!-- Right (content) side -->
+			<div class="content-block" role="main">
+			
+				<!-- Page header -->
+				<article class="page-header">
+					<h1>Calendar</h1>
+					<p>FullCalendar is a jQuery plugin that provides a full-sized, drag & drop calendar like the one below. It uses AJAX to fetch events on-the-fly for each month and is easily configured to use your own feed format (an extension is provided for Google Calendar). It is visually customizable and exposes hooks for user-triggered events (like clicking or dragging an event). It is open source and dual licensed under the MIT or GPL Version 2 licenses.</p>
+				</article>
+				<!-- /Page header -->
+				
+				<!-- Grid row -->
+				<div class="row">
+				
+					<!-- Example jQuery FullCalendar -->
+					<!-- Data block -->
+					<article class="span12 data-block">
+						<div class="data-container">
+							<header>
+								<h2>Basic calendar setup</h2>
+								<ul class="data-header-actions">
+									<li class="demoTabs active"><a href="#basic" class="btn btn-alt btn-inverse">Basic</a></li>
+									<li class="demoTabs"><a href="#google" class="btn btn-alt btn-inverse">Google</a></li>
+								</ul>
+							</header>
+							<section class="tab-content">
+							
+								<!-- Tab #basic -->
+								<div class="tab-pane active" id="basic">
+									<div class='full-calendar full-calendar-demo'></div>
+								</div>
+								<!-- /Tab #basic -->
+								
+								<!-- Tab #google -->
+								<div class="tab-pane" id="google">
+									<div class='full-calendar full-calendar-gcal'></div>
+								</div>
+								<!-- /Tab #google -->
+								
+							</section>
+						</div>
+					</article>
+					<!-- /Data block -->
+					
+				</div>
+				<!-- /Grid row -->
+				
+			</div>
+			<!-- /Right (content) side -->
+			
+		</section>
+		<!-- /Main page container -->
+		
+		<!-- Main page footer -->
+		<footer class="container">
+			<p>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com">Walking Pixels</a>.</p>
+			<ul>
+				<li><a href="#" class="">Support</a></li>
+				<li><a href="#" class="">Documentation</a></li>
+				<li><a href="#" class="">API</a></li>
+			</ul>
+			<a href="#top" class="btn btn-primary btn-flat pull-right">Top &uarr;</a>
+		</footer>
+		<!-- /Main page footer -->
+		
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+		<script src="js/bootstrap/bootstrap-affix.js"></script>
+		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap/bootstrap-tab.js"></script>
+		<script src="js/bootstrap/bootstrap-collapse.js"></script>
+		
+		<!-- jQuery FullCalendar -->
+		<script src="js/plugins/fullCalendar/jquery.fullcalendar.min.js"></script>
+		
+		<!-- Google Calendar plugin for jQuery FullCalendar -->
+		<script src="js/plugins/fullCalendar/gcal.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				var date = new Date();
+				var d = date.getDate();
+				var m = date.getMonth();
+				var y = date.getFullYear();
+				
+				$('.full-calendar-demo').fullCalendar({
+					header: {
+						left: 'title',
+						center: '',
+						right: 'today month,basicWeek prev,next'
+					},
+					buttonText: {
+						prev: '<span class="awe-circle-arrow-left"></span>',
+						next: '<span class="awe-circle-arrow-right"></span>'
+					},
+					editable: true,
+					events: [
+						{
+							title: 'All Day Event',
+							start: new Date(y, m, 1)
+						},
+						{
+							title: 'Long Event',
+							start: new Date(y, m, d-5),
+							end: new Date(y, m, d-2)
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d-3, 16, 0),
+							allDay: false
+						},
+						{
+							id: 999,
+							title: 'Repeating Event',
+							start: new Date(y, m, d+4, 16, 0),
+							allDay: false
+						},
+						{
+							title: 'Meeting',
+							start: new Date(y, m, d, 10, 30),
+							allDay: false
+						},
+						{
+							title: 'Lunch',
+							start: new Date(y, m, d, 12, 0),
+							end: new Date(y, m, d, 14, 0),
+							allDay: false
+						},
+						{
+							title: 'Birthday Party',
+							start: new Date(y, m, d+1, 19, 0),
+							end: new Date(y, m, d+1, 22, 30),
+							allDay: false
+						},
+						{
+							title: 'Walking Pixels website',
+							start: new Date(y, m, 28),
+							end: new Date(y, m, 29),
+							url: 'http://www.walkingpixels.com/'
+						}
+					]
+				});
+				
+				$('.full-calendar-gcal').fullCalendar({
+					header: {
+						left: 'title',
+						center: '',
+						right: 'today month,basicWeek prev,next'
+					},
+					buttonText: {
+						prev: '<span class="awe-arrow-left"></span>',
+						next: '<span class="awe-arrow-right"></span>'
+					},
+					events: {
+						url: 'http://www.google.com/calendar/feeds/usa__en%40holiday.calendar.google.com/public/basic',
+						className: 'gcal-event', // an option!
+						currentTimezone: 'America/Chicago' // an option!
+					}
+				});
+				
+			});
+		</script>
+		
+	</body>
+</html>

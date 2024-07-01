@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>Dashboard | Huraga Bootstrap Admin Template</title>
+		<meta name="description" content="">
+		<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+		<meta name="robots" content="index, follow">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- jQuery Visualize Styles -->
+		<link rel='stylesheet' type='text/css' href='/assets/css/plugins/jquery.visualize.css'>
+		
+		<!-- jQuery jGrowl Styles -->
+		<link rel='stylesheet' type='text/css' href='/assets/css/plugins/jquery.jgrowl.css'>
+		
+		<!-- CSS styles -->
+		<link rel='stylesheet' type='text/css' href='/assets/css/huraga-blue.css'>
+		
+		<!-- Fav and touch icons -->
+		<link rel="shortcut icon" href="/assets/img/icons/favicon.ico">
+		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72-precomposed.png">
+		<link rel="apple-touch-icon-precomposed" href="/assets/img/icons/apple-touch-icon-57-precomposed.png">
+		
+		<!-- JS Libs -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+		<script>window.jQuery || document.write('<script src="/assets/js/libs/jquery.js"><\/script>')</script>
+		<script src="/assets/js/libs/modernizr.js"></script>
+		<script src="/assets/js/libs/selectivizr.js"></script>
+		
+		<script>
+			$(document).ready(function(){
+				
+				// Tooltips
+				$('[title]').tooltip({
+					placement: 'top'
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		
+		<!-- Main page header -->
+		<header class="container">
+		
+			<!-- Main page logo -->
+			<h1><a href="login.html" class="brand">Huraga</a></h1>
+			
+			<!-- Main page headline -->
+			<p>A beautifully minimalistic admin template</p>
+			
+			<!-- Alternative navigation -->
+			<nav>
+				<ul>
+					<li><a href="/logout">Logout</a></li>
+				</ul>
+			</nav>
+			<!-- /Alternative navigation -->
+			
+		</header>
+		<!-- /Main page header -->
+		
+		<!-- Main page container -->
+		<section class="container" role="main">
+		
+			<!-- Left (navigation) side -->
+			<div class="navigation-block">
+			
+				<!-- User profile -->
+				<!-- User profile -->
+				<section class="user-profile">
+					<h2>
+						<strong><span href="#" class="nickname">{{ .User.NickName }}</span></strong><br>
+						<strong><span class="email">{{ .User.Email }}</span></strong>
+					</h2>
+				</section>
+				<!-- /User profile -->
+				<!-- /User profile -->
+
+
+				<!-- Main navigation -->
+				<nav class="main-navigation" role="navigation">
+					<ul>
+						<li><a href="/index" class="no-submenu"><span class="awe-home"></span>Main page</a></li>
+						<li><a href="/setup/subscribe" class="no-submenu"><span class="awe-tasks"></span>Subscribe</a></li>
+						<li><a href="/config" class="no-submenu"><span class="awe-tasks"></span>Server configuration</a></li>
+					</ul>
+				</nav>
+				<!-- /Main navigation -->
+
+
+
+			</div>
+			<!-- Left (navigation) side -->
+
+			<!-- Right (content) side -->
+			<div class="content-block" role="main">
+
+				<!-- Page header -->
+				<div class="container">
+					<h2><strong><a href="#" class=""></a>{{ .User.NickName }}</strong></h2>
+				</div>
+				<!-- /Page header -->
+
+				<!-- Grid row -->
+				<div class="row">
+
+					<!-- Data block -->
+					<article class="span4 data-block accordion-block decent">
+						<div class="data-container">
+							<div id="accordionName" class="accordion">
+								{{ range $i, $value := .Collections }}
+								<div class="accordion-group">
+									<div class="accordion-heading" href="/viewEvents/{{$value}}">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordionName" href="/viewEvents/{{$value}}">{{ $value }} Change Events</a>
+									</div>
+								</div>
+								{{ end }}
+							</div>
+						</div>
+					</article>
+					<!-- /Data block -->
+				</div>
+				<!-- /Grid row -->
+
+			</div>
+		</section>
+		<!-- /Main page container -->
+		
+		<!-- Main page footer -->
+		<footer class="container">
+			<p>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com">Walking Pixels</a>.</p>
+			<ul>
+				<li><a href="#" class="">Support</a></li>
+				<li><a href="#" class="">Documentation</a></li>
+				<li><a href="#" class="">API</a></li>
+			</ul>
+			<a href="#top" class="btn btn-primary btn-flat pull-right">Top &uarr;</a>
+		</footer>
+		<!-- /Main page footer -->
+		
+		<!-- Scripts -->
+		<script src="js/navigation.js"></script>
+		<script src="js/bootstrap/bootstrap-affix.js"></script>
+		<script src="js/bootstrap/bootstrap-tooltip.js"></script>
+		<script src="js/bootstrap/bootstrap-collapse.js"></script>
+		<script src="js/bootstrap/bootstrap-dropdown.js"></script>
+		
+		<!-- Block TODO list -->
+		<script>
+			$(document).ready(function() {
+				
+				$('.todo-block input[type="checkbox"]').click(function(){
+					$(this).closest('tr').toggleClass('done');
+				});
+				$('.todo-block input[type="checkbox"]:checked').closest('tr').addClass('done');
+				
+			});
+		</script>
+		
+		<!-- jQuery Visualize -->
+		<!--[if lte IE 8]>
+			<script language="javascript" type="text/javascript" src="/assets/js/plugins/visualize/excanvas.js"></script>
+		<![endif]-->
+		<script src="/assets/js/plugins/visualize/jquery.visualize.min.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				var chartWidth = $(('.chart')).parent().width()*0.9;
+				
+				$('.chart').hide().visualize({
+					type: 'pie',
+					width: chartWidth,
+					height: chartWidth,
+					colors: ['#389abe','#fa9300','#6b9b20','#d43f3f','#8960a7','#33363b','#b29559','#6bd5b1','#66c9ee'],
+					lineDots: 'double',
+					interaction: false
+				});
+			
+			});
+		</script>
+		
+		<!-- jQuery Flot Charts -->
+		<!--[if lte IE 8]>
+			<script language="javascript" type="text/javascript" src="/assets/js/plugins/flot/excanvas.min.js"></script>
+		<![endif]-->
+		<script src="/assets/js/plugins/flot/jquery.flot.js"></script>
+		
+		<script>
+			$(document).ready(function() {
+			
+				// Demo #1
+				// we use an inline data source in the example, usually data would be fetched from a server
+				var data = [], totalPoints = 300;
+				function getRandomData() {
+					if (data.length > 0)
+						data = data.slice(1);
+				
+					// do a random walk
+					while (data.length < totalPoints) {
+						var prev = data.length > 0 ? data[data.length - 1] : 50;
+						var y = prev + Math.random() * 10 - 5;
+						if (y < 0)
+							y = 0;
+						if (y > 100)
+							y = 100;
+						data.push(y);
+					}
+				
+					// zip the generated y values with the x values
+					var res = [];
+					for (var i = 0; i < data.length; ++i)
+						res.push([i, data[i]])
+					return res;
+				}
+				
+				// setup control widget
+				var updateInterval = 30;
+				$("#updateInterval").val(updateInterval).change(function () {
+					var v = $(this).val();
+					if (v && !isNaN(+v)) {
+						updateInterval = +v;
+					if (updateInterval < 1)
+						updateInterval = 1;
+					if (updateInterval > 2000)
+						updateInterval = 2000;
+					$(this).val("" + updateInterval);
+					}
+				});
+				
+				// setup plot
+				var options = {
+					series: { shadowSize: 0, color: '#389abe' }, // drawing is faster without shadows
+					yaxis: { min: 0, max: 100 },
+					xaxis: { show: false },
+					grid: { backgroundColor: '#ffffff' }
+				};
+				var plot = $.plot($("#demo-1"), [ getRandomData() ], options);
+				
+				function update() {
+					plot.setData([ getRandomData() ]);
+					// since the axes don't change, we don't need to call plot.setupGrid()
+					plot.draw();
+					setTimeout(update, updateInterval);
+				}
+				
+				update();
+			
+			});
+		</script>
+		
+		<!-- jQuery jGrowl -->
+		<script type="text/javascript" src="/assets/js/plugins/jGrowl/jquery.jgrowl.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function(){
+				
+				// This value can be true, false or a function to be used as a callback when the closer is clciked
+				$.jGrowl.defaults.closer = function() {
+					console.log("Closing everything!", this);
+				};
+				
+				$.jGrowl("Hello stranger!", { 
+					theme: 'success'
+				});
+				
+				$.jGrowl("This notification will live a little longer. This is default style.", {
+					life: 2500,
+					theme: 'danger'
+				});
+				$.jGrowl("Sticky notification with a header", {
+					header: 'Ernest Lawrence',
+					sticky: true
+				});
+				$.jGrowl("Chromatron theme, and a whole bunch of callbacks...", { 
+					theme: 'primary',
+					speed: 'slow',
+					beforeOpen: function(e,m,o) {
+						console.log("I am going to be opened!", this);
+					},
+					open: function(e,m,o) {
+						console.log("I have been opened!", this);
+					},
+					beforeClose: function(e,m,o) {
+						console.log("I am going to be closed!", this);
+					},
+					close: function(e,m,o) {
+						console.log("I have been closed!", this);
+					}
+				});
+				
+				$.jGrowl("Custom animation test...", { 
+					speed: 'slow',
+					animateOpen: { 
+						height: "show"
+					},
+					animateClose: { 
+						height: "hide"
+					}
+				});
+				
+				$.jGrowl("This message will not close because we have a callback that returns false.", {
+					beforeClose: function() {
+						return false;
+					}
+				});
+				
+				$.jGrowl.defaults.closerTemplate = '<div>hide all notifications</div>';
+				
+			});
+			
+		</script>
+		
+	</body>
+</html>

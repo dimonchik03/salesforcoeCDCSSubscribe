@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Goodies | Huraga Bootstrap Admin Template</title>
+	<meta name="description" content="">
+	<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery Snippet Styles -->
+	<link rel='stylesheet' type='text/css' href='/assets/css/plugins/jquery.snippet.css'>
+
+	<!-- CSS styles -->
+	<link rel='stylesheet' type='text/css' href='/assets/css/huraga-blue.css'>
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="/assets/img/icons/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/assets/img/icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- JS Libs -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/assets/js/libs/jquery.js"><\/script>')</script>
+	<script src="/assets/js/libs/modernizr.js"></script>
+	<script src="/assets/js/libs/selectivizr.js"></script>
+
+	<script>
+		$(document).ready(function(){
+
+			// Tooltips
+			$('[title]').tooltip({
+				placement: 'top'
+			});
+
+			// Dropdowns
+			$('.dropdown-toggle').dropdown();
+
+			// Tabs
+			$('.demoTabs a').click(function (e) {
+				e.preventDefault();
+				$(this).tab('show');
+			})
+
+		});
+	</script>
+</head>
+<body>
+
+<!-- Main page header -->
+<header class="container">
+
+	<!-- Main page logo -->
+	<h1><a href="/index" class="brand">Huraga</a></h1>
+
+	<!-- Main page headline -->
+	<p>Salesforce subscriber</p>
+
+	<!-- Alternative navigation -->
+	<nav>
+		<ul>
+			<li><a href="/logout/salesforce">Logout</a></li>
+		</ul>
+	</nav>
+	<!-- /Alternative navigation -->
+
+</header>
+<!-- /Main page header -->
+
+<!-- Main page container -->
+<section class="container" role="main">
+
+	<!-- Left (navigation) side -->
+	<div class="navigation-block">
+
+		<!-- User profile -->
+		<!-- User profile -->
+		<section class="user-profile">
+			<h2>
+				<strong><span href="#" class="nickname">{{ .User.NickName }}</span></strong><br>
+				<strong><span class="email">{{ .User.Email }}</span></strong>
+			</h2>
+		</section>
+		<!-- /User profile -->
+		<!-- /User profile -->
+
+
+		<!-- Main navigation -->
+		<nav class="main-navigation" role="navigation">
+			<ul>
+				<li><a href="/index" class="no-submenu"><span class="awe-home"></span>Main page</a></li>
+				<li><a href="/setup/subscribe" class="no-submenu"><span class="awe-tasks"></span>Subscribe</a></li>
+				<li><a href="/config" class="no-submenu"><span class="awe-tasks"></span>Server configuration</a></li>
+			</ul>
+		</nav>
+		<!-- /Main navigation -->
+
+
+	</div>
+	<!-- Left (navigation) side -->
+
+	<!-- Right (content) side -->
+	<div class="content-block" role="main">
+
+		<!-- Page header -->
+		<article class="page-header">
+			<h1>View {{ .ModelName }} changes</h1>
+		</article>
+		<!-- /Page header -->
+
+		<!-- Grid row -->
+		<div class="row">
+
+			<!-- Data block -->
+			<article class="span12 data-block decent">
+				<article class="span12 data-block">
+					<div class="data-container">
+						<section class="span11">
+
+							<table class="table table-striped">
+								<thead>
+								<tr>
+									<th>Record Name</th>
+									<th>Record ID</th>
+									<th>Last Modified By </th>
+									<th>Last Modified date</th>
+									<th></th>
+								</tr>
+								</thead>
+
+								<tbody>
+								{{ range .ObjectsData }}
+									<tr>
+										<td>{{ .RecordName }}</td>
+										<td>{{ .RecordId }}</td>
+										<td>{{ .CommitUserName }}</td>
+										<td>{{ .LastModifiedDate }}</td>
+
+										<td><a href="/viewEvents/{{ $.ModelName }}/{{ .RecordId }}">View events</a></td>
+									</tr>
+								{{ end }}
+								</tbody>
+
+
+
+							</table>
+						</section>
+					</div>
+				</article>
+			</article>
+
+
+
+			<!-- /Data block -->
+
+		</div>
+
+	</div>
+	<!-- /Right (content) side -->
+
+</section>
+<!-- /Main page container -->
+
+<!-- Main page footer -->
+<footer class="container">
+	<p>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com">Walking Pixels</a>.</p>
+	<ul>
+		<li><a href="#" class="">Support</a></li>
+		<li><a href="#" class="">Documentation</a></li>
+		<li><a href="#" class="">API</a></li>
+	</ul>
+	<a href="#top" class="btn btn-primary btn-flat pull-right">Top &uarr;</a>
+</footer>
+<!-- /Main page footer -->
+
+<!-- Scripts -->
+<script src="/assets/js/navigation.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-affix.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-tooltip.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-dropdown.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-tab.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-collapse.js"></script>
+
+<!-- Block TODO list -->
+<script>
+	$(document).ready(function() {
+
+		$('.todo-block input[type="checkbox"]').click(function(){
+			$(this).closest('tr').toggleClass('done');
+		});
+		$('.todo-block input[type="checkbox"]:checked').closest('tr').addClass('done');
+
+	});
+</script>
+
+<!-- jQuery Snippet -->
+<script src="/assets/js/plugins/snippet/jquery.snippet.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		$('pre.html').snippet('html',{style:"rand01"});
+
+	});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<!--[if IE 8]>    <html class="no-js ie8 ie" lang="en"> <![endif]-->
+<!--[if IE 9]>    <html class="no-js ie9 ie" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>Form elements | Huraga Bootstrap Admin Template</title>
+	<meta name="description" content="">
+	<meta name="author" content="Walking Pixels | www.walkingpixels.com">
+	<meta name="robots" content="index, follow">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- jQuery TagsInput Styles -->
+	<link rel='stylesheet' type='text/css' href='/assets/css/plugins/jquery.tagsinput.css'>
+
+	<!-- jQuery jWYSIWYG Styles -->
+	<link rel='stylesheet' type='text/css' href='/assets/css/plugins/jquery.jwysiwyg.css'>
+
+	<!-- Bootstrap wysihtml5 Styles -->
+	<link rel='stylesheet' type='text/css' href='/assets/css/plugins/bootstrap-wysihtml5.css'>
+
+	<!-- CSS styles -->
+	<link rel='stylesheet' type='text/css' href='/assets/css/huraga-green.css'>
+
+	<!-- Fav and touch icons -->
+	<link rel="shortcut icon" href="/assets/img/icons/favicon.ico">
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72-precomposed.png">
+	<link rel="apple-touch-icon-precomposed" href="/assets/img/icons/apple-touch-icon-57-precomposed.png">
+
+	<!-- JS Libs -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="/assets/js/libs/jquery.js"><\/script>')</script>
+	<script src="/assets/js/libs/modernizr.js"></script>
+{{/*	<script src="/assets/js/scripts/index.js.js"></script>*/}}
+	<script src="/assets/js/libs/selectivizr.js"></script>
+
+	<!-- <script>
+        $(document).ready(function(){
+
+            // Tooltips
+            $('[title]').tooltip({
+                placement: 'top'
+            });
+
+            // Dropdowns
+            $('.dropdown-toggle').dropdown();
+
+            // Tabs
+            $('.demoTabs a').click(function (e) {
+                e.preventDefault();
+                $(this).tab('show');
+            })
+
+        });
+    </script> -->
+</head>
+<body>
+
+<!-- Main page header -->
+<header class="container">
+
+	<!-- Main page logo -->
+	<h1><a href="login.html" class="brand">Huraga</a></h1>
+
+	<!-- Main page headline -->
+	<p>A beautifully minimalistic admin template</p>
+
+	<!-- Alternative navigation -->
+	<nav>
+		<ul>
+			<li>
+				<form class="nav-search">
+					<input type="text" placeholder="Search&hellip;">
+				</form>
+			</li>
+			<li>
+				<div class="btn-group">
+					<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+						Configuration
+						<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="401.html"><span class="awe-flag"></span> Error page 401</a></li>
+						<li><a href="403.html"><span class="awe-flag"></span> Error page 403</a></li>
+						<li><a href="404.html"><span class="awe-flag"></span> Error page 404</a></li>
+						<li><a href="500.html"><span class="awe-flag"></span> Error page 500</a></li>
+						<li><a href="503.html"><span class="awe-flag"></span> Error page 503</a></li>
+					</ul>
+				</div>
+			</li>
+			<li><a href="#">Logout</a></li>
+		</ul>
+	</nav>
+	<!-- /Alternative navigation -->
+
+</header>
+<!-- /Main page header -->
+
+<!-- Main page container -->
+<section class="container" role="main">
+
+	<!-- Left (navigation) side -->
+	<div class="navigation-block">
+
+		<!-- User profile -->
+		<section class="user-profile">
+			<figure>
+{{/*				<img alt="John Pixel avatar" src="http://placekitten.com/60/60">*/}}
+				<figcaption>
+					<strong><a href="#" class="">John Pixel</a></strong>
+					<em>marketing manager</em>
+					<ul>
+						<li><a class="btn btn-primary btn-flat" href="#" title="Account settings">settings</a></li>
+						<li><a class="btn btn-primary btn-flat" href="#" title="Message inbox">inbox</a></li>
+					</ul>
+				</figcaption>
+			</figure>
+		</section>
+		<!-- /User profile -->
+
+		<!-- Sample left search bar -->
+		<form class="side-search">
+			<input type="text" class="rounded" placeholder="To search type and hit enter">
+		</form>
+		<!-- /Sample left search bar -->
+
+		<!-- Main navigation -->
+		<nav class="main-navigation" role="navigation">
+			<ul>
+				<li class="current"><a href="/index" class="no-submenu"><span class="awe-home"></span>Main</a></li>
+				<li><a href="/setupSubscribe/salesforce" class="no-submenu"><span class="awe-magic"></span>Setup subscribe</a></li>
+			</ul>
+		</nav>
+		<!-- /Main navigation -->
+
+	</div>
+	<!-- Left (navigation) side -->
+
+	<!-- Right (content) side -->
+	<div class="content-block" role="main">
+
+		<!-- Page header -->
+		<!-- /Page header -->
+
+		<!-- Grid row -->
+		<div class="row">
+
+			<!-- Data block -->
+			<article class="span12 data-block">
+				<div class="data-container">
+					<header>
+						<h2>Setup subscribe</h2>
+					</header>
+					`<section class="tab-content">
+
+						<!-- Tab #basic -->
+						<div class="tab-pane active" id="basic">
+						<!-- Example horizontal forms -->
+							<div class="row-fluid">
+
+								<div class="span12">
+									<form class="form-horizontal" id="integration-user-form" action="/postSubscribeData" method="post">
+										<fieldset>
+											<div class="control-group">
+												<div class="controls">
+
+													<!-- <input id="TopicName" class="input-xlarge" type="text" name="TopicName">
+                                                    <p class="help-block">topic name ex. /data/AccountChangeEvent</p> -->
+													<input id="IntegrationUserEmail" class="input-xlarge" type="email" name="IntegrationUserEmail" value="{{.User.Name}}">
+													<p class="help-block">IntegrationUserEmail</p>
+													<br>
+													<input id="SalesforceKey" class="input-xlarge" type="text" name="SalesforceKey" value="{{.User.Email}}" >
+													<p class="help-block">Salesforce Key</p>
+													<br>
+													<br>
+													<br>
+
+													<p class="help-block">Setup topics for subscribe</p>
+													<div id="setup-topics-form-id" class="setup-topics-form span10">
+														{{ range $el := .Topics }}
+															<div class="setup-topics-form-item">
+																<input id="{{ $el.Name }}" value="{{ $el.Name }}" class="input-xlarge span5" type="text" name="{{ $el.Name }}">
+																<input id="{{ $el.ChannelName }}" value="{{ $el.ChannelName }}" class="input-xlarge span5" type="text" name="{{ $el.ChannelName }}" >
+																<input id="subscribe-{{ $el.Name }}" class="checkbox span1" type="checkbox" name="subscribe-{{ $el.Name }}" {{ if $el.CurrentlySubscribe }}checked{{ end }}>
+																{{ if $el.Error }} <span class="label label-important" >ERROR</span>{{else}} <span class="label label-success" >OK</span> {{ end }}
+{{/*																<label for="subscribe-{{ $el.Name }}">Currently Subscribe</label>*/}}
+															</div>
+															<br>
+														{{ end }}
+													</div>
+													<br>
+													<br>
+													<div class="span2">
+														<button class="btn" id="addTopic" type="button">+</button>
+														<button class="btn" id="removeTopic" type="button">-</button>
+													</div>
+													<br>
+													<div class="span2">
+														<input class="btn" type="submit" value="submit">
+													</div>
+												</div>
+												<script>
+													window.addEventListener("load", () => {
+														const addBtn = document.querySelector("#addTopic");
+														const removeBtn = document.querySelector("#removeTopic");
+
+														addBtn.addEventListener("click", () => {
+															const inputTopicName = document.createElement("input");
+															inputTopicName.className = "input-xlarge span5";
+															inputTopicName.type = "text";
+															inputTopicName.id = "newTopicName";
+															inputTopicName.name = "newTopicName";
+
+
+															const inputTopicChannel = document.createElement("input");
+															inputTopicChannel.className = "input-xlarge span5";
+															inputTopicChannel.type = "text";
+															inputTopicChannel.id = "newTopicChannel";
+															inputTopicChannel.name = "newTopicChannelName";
+
+															const inputTopicCheckBox = document.createElement("input");
+															inputTopicCheckBox.className = "checkbox span1";
+															inputTopicCheckBox.type = "checkbox";
+															inputTopicCheckBox.id = "newTopicCheckBox";
+															inputTopicCheckBox.name = "newTopicCheckBoxName";
+
+															const divForElement = document.createElement("div");
+															divForElement.className = "setup-topics-form-item";
+															divForElement.append(inputTopicName, inputTopicChannel, inputTopicCheckBox);
+
+															const setupTopicsForm = document.getElementById("setup-topics-form-id");
+															setupTopicsForm.append(divForElement);
+															setupTopicsForm.append(document.createElement("br"));
+														});
+
+														removeBtn.addEventListener("click", () => {
+															const setupTopicsForm = document.getElementById("setup-topics-form-id");
+															const formItems = setupTopicsForm.getElementsByClassName("setup-topics-form-item");
+															if (formItems.length > 0) {
+																const lastFormItem = formItems[formItems.length - 1];
+																const inputFields = lastFormItem.getElementsByTagName("input");
+
+																if (inputFields[0].value === "" && inputFields[1].value === "") {
+																	setupTopicsForm.removeChild(lastFormItem);
+																	setupTopicsForm.removeChild(setupTopicsForm.lastChild); // Remove the <br> element
+																}
+															}
+														});
+
+														const form = document.getElementById("integration-user-form");
+
+
+														form.addEventListener("submit", (event) => {
+															event.preventDefault();
+															// const topics = new Object()
+															const formData = new Object()
+															const setupTopicsFormItems = document.getElementsByClassName("setup-topics-form-item");
+															// <input id="IntegrationUserEmail" class="input-xlarge" type="email" name="IntegrationUserEmail" value="{{.SetupValues.Username}}">
+															// 	<p class="help-block">IntegrationUserEmail</p>
+															// 	<br>
+															// 		<input id="SalesforceKey" class="input-xlarge" type="text" name="SalesforceKey" value="{{.SetupValues.SalesforceKey}}" >
+															// 			<p class="help-block">Salesforce Key</p>
+															// 			<br>
+															// 				<input id="SalesforceSecret" c
+															const integrationUserEmail = document.getElementById("IntegrationUserEmail");
+															const salesforceKey = document.getElementById("SalesforceKey");
+															// const salesforceSecret = document.getElementById("SalesforceSecret");
+															const arrTopics = []
+															for (let i = 0; i < setupTopicsFormItems.length; i++) {
+
+																const inputFields = setupTopicsFormItems[i].getElementsByTagName("input");
+																const topicName = inputFields[0].value;
+																const topicChannel = inputFields[1].value;
+																const topicSubscribed = inputFields[2].value;
+																// const topic =  new Object()
+
+																let topic = {
+																	"TopicChannel": topicChannel,
+																	"TopicName": topicName,
+																	"TopicSubscribed": topicSubscribed
+																};
+																arrTopics.push(topic)
+
+
+																// Set the IDs of the input fields based on the input values
+																// inputFields[0].id = topicName;
+																// inputFields[0].name = topicName;
+																// inputFields[1].id = topicChannel;
+																// inputFields[1].name = topicChannel;
+															}
+
+															formData[integrationUserEmail.id] = integrationUserEmail.value
+															formData[salesforceKey.id] = salesforceKey.value
+															// formData[salesforceSecret.id] = salesforceSecret.value
+															formData["Topics"] = arrTopics
+															fetch("/postSubscribeData", {method: "POST", body: JSON.stringify(formData), headers: {"Content-Type": "application/json"}})
+															// console.log(topicsData)
+															// form.submit();
+														});
+													});
+
+												</script>
+
+											</div>
+										</fieldset>
+									</form>
+								</div>
+							</div>
+
+						</div>
+						<!-- /Tab #basic -->
+
+						<!-- Tab #advanced -->
+						<div class="tab-pane" id="advanced">
+
+							<div class="row-fluid">
+
+								<!-- Example search forms -->
+								<div class="span6">
+									<h3>Search form</h3>
+									<p>Add <code>.form-search</code> to the form and <code>.search-query</code> to the <code>input</code>.</p>
+									<form class="form-search">
+										<div class="control-group">
+											<div class="controls">
+												<input class="search-query" type="text">
+												<button class="btn" type="submit">Search</button>
+											</div>
+										</div>
+									</form>
+								</div>
+
+
+							</div>
+							<div class="row-fluid">
+
+								<!-- Example alerts in form -->
+								`
+
+								<form class="form-horizontal">
+									<fieldset>
+										<div class="alert alert-block">
+											<button class="close" data-dismiss="alert" type="button">&times;</button>
+											<strong>Warning!</strong>
+											<p>Best check yo self, you're not looking too good. Nulla vitae elit libero, a pharetra augue. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+										</div>
+										<div class="control-group">
+											<label class="control-label" for="input5">Text input</label>
+											<div class="controls">
+												<input id="input5" type="text">
+												<p class="help-block">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+											</div>
+										</div>
+										<div class="form-actions">
+											<button class="btn btn-primary btn-large" type="submit">Save changes</button>
+											<button class="btn btn-large">Cancel</button>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+
+						</div>
+
+
+						<!-- /Tab #advanced -->
+
+					</section>
+					<footer class="info">
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit, dolor mollis adipiscing elementum, ipsum turpis euismod tellus, vitae mollis velit leo id nisi.</p>
+					</footer>
+				</div>
+			</article>
+			<!-- /Data block -->
+
+		</div>
+
+
+
+	</div>
+	<!-- /Right (content) side -->
+
+</section>
+<!-- /Main page container -->
+
+<!-- Main page footer -->
+<footer class="container">
+	<p>Built with love on <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a> by <a href="http://www.walkingpixels.com">Walking Pixels</a>.</p>
+	<ul>
+		<li><a href="#" class="">Support</a></li>
+		<li><a href="#" class="">Documentation</a></li>
+		<li><a href="#" class="">API</a></li>
+	</ul>
+	<a href="#top" class="btn btn-primary btn-flat pull-right">Top &uarr;</a>
+</footer>
+<!-- /Main page footer -->
+
+<!-- Scripts -->
+<script src="/assets/js/navigation.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-affix.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-alert.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-tooltip.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-dropdown.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-tab.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-collapse.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-fileupload.js"></script>
+<script src="/assets/js/bootstrap/bootstrap-inputmask.js"></script>
+
+<!-- jQuery TagsInput -->
+<script src="/assets/js/plugins/tagsInput/jquery.tagsinput.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		$('.tagsinput').tagsInput();
+
+	});
+</script>
+
+<!-- jQuery jWYSIWYG -->
+<script src="/assets/js/plugins/jWYSIWYG/jquery.wysiwyg.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		$('.wysiwyg').wysiwyg({
+			controls: {
+				bold          : { visible : true },
+				italic        : { visible : true },
+				underline     : { visible : true },
+				strikeThrough : { visible : true },
+
+				justifyLeft   : { visible : true },
+				justifyCenter : { visible : true },
+				justifyRight  : { visible : true },
+				justifyFull   : { visible : true },
+
+				indent  : { visible : true },
+				outdent : { visible : true },
+
+				subscript   : { visible : true },
+				superscript : { visible : true },
+
+				undo : { visible : true },
+				redo : { visible : true },
+
+				insertOrderedList    : { visible : true },
+				insertUnorderedList  : { visible : true },
+				insertHorizontalRule : { visible : true },
+
+				cut   : { visible : true },
+				copy  : { visible : true },
+				paste : { visible : true }
+			},
+			events: {
+				click: function(event) {
+					if ($("#click-inform:checked").length > 0) {
+						event.preventDefault();
+						alert("You have clicked jWysiwyg content!");
+					}
+				}
+			}
+		});
+
+	});
+</script>
+
+<!-- Wysihtml5 -->
+<script src="/assets/js/plugins/wysihtml5/wysihtml5-0.3.0.js"></script>
+<script src="/assets/js/plugins/wysihtml5/bootstrap-wysihtml5.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		$('.wysihtml5').wysihtml5();
+
+	});
+</script>
+
+<!-- Colorpicker -->
+<script src="/assets/js/plugins/colorpicker/bootstrap-colorpicker.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		var preview = $('.colorpicker-preview')[0].style;
+		$('.colorpicker').colorpicker().on('changeColor', function(ev){
+			preview.backgroundColor = ev.color.toHex();
+		});
+
+	});
+</script>
+
+<!-- Colorpicker -->
+<script src="/assets/js/plugins/datepicker/bootstrap-datepicker.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		$('.datepicker').datepicker();
+
+	});
+</script>
+
+</body>
+</html>
